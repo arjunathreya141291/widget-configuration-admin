@@ -1,0 +1,1 @@
+# magento-catalog-sync-admin
