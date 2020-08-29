@@ -1,0 +1,14 @@
+<?php
+/** @var \Magento\CatalogSyncAdmin\Block\Adminhtml\Index $block */
+?>
+
+<div
+    id="root"
+    data-magento-middleware-url="<?= $block->escapeUrl($block->getUrl('catalogsyncadmin/index/middleware')); ?>"
+    data-environment-id="<?= $block->escapeHtmlAttr($block->getEnvironmentId()); ?>"
+    data-website-code="<?= $block->escapeHtmlAttr($block->getWebsiteCode()); ?>"
+    data-store-view-code="<?= $block->escapeHtmlAttr($block->getStoreViewCode()); ?>"
+    data-store-view-product-count="<?= $block->escapeHtmlAttr($block->getStoreViewProductCount()); ?>"
+></div>
+
+<script src="<?= $block->escapeUrl($block->getFrontendUrl()) ?>"></script>
