@@ -66,6 +66,6 @@ class ForceResync extends AbstractAction
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Magento_CatalogSyncAdmin::catalog_sync');
+        return $this->_authorization->isAllowed('Magento_CatalogSyncAdmin::catalog_sync_admin');
     }
 }

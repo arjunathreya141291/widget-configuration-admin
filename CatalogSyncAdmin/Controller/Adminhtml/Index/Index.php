@@ -26,7 +26,7 @@ class Index extends Action implements HttpGetActionInterface
      */
     const CONTENT_SECURITY_POLICY_CONFIG_PATH = 'catalog_sync_admin/content_security_policy';
 
-    const MENU_ID = 'Magento_CatalogSyncAdmin::catalogsyncadmin';
+    const MENU_ID = 'Magento_CatalogSyncAdmin::catalog_sync_admin';
 
     /**
      * @var PageFactory
@@ -62,7 +62,7 @@ class Index extends Action implements HttpGetActionInterface
     }
 
     /**
-     * Load the page defined in view/adminhtml/layout/catalogsyncadmin_index_index.xml
+     * Load the page defined in view/adminhtml/layout/catalog_sync_admin_index_index.xml
      *
      * @return Page
      */
