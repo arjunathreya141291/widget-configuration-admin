@@ -9,6 +9,7 @@ namespace Magento\CatalogSyncAdmin\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action\Context;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\CatalogSyncAdmin\Model\ServiceClientInterface;
 
@@ -17,6 +18,11 @@ use Magento\CatalogSyncAdmin\Model\ServiceClientInterface;
  */
 class Middleware extends AbstractAction
 {
+    /**
+     * Config paths
+     */
+    const BASE_ROUTE_CONFIG_PATH = 'catalog_sync_admin/admin_api_path';
+
     /**
      * @var JsonFactory
      */
@@ -28,16 +34,24 @@ class Middleware extends AbstractAction
     private $serviceClient;
 
     /**
+     * @var ScopeConfigInterface
+     */
+    private $config;
+
+    /**
      * @param Context $context
      * @param ServiceClientInterface $serviceClient
+     * @param ScopeConfigInterface $config
      * @param JsonFactory $resultJsonFactory
      */
     public function __construct(
         Context $context,
         ServiceClientInterface $serviceClient,
+        ScopeConfigInterface $config,
         JsonFactory $resultJsonFactory
     ) {
         $this->serviceClient = $serviceClient;
+        $this->config = $config;
         $this->resultJsonFactory = $resultJsonFactory;
         parent::__construct($context);
     }
@@ -51,7 +65,8 @@ class Middleware extends AbstractAction
         $method = $this->getRequest()->getParam('method', 'POST');
         $payload = $this->getRequest()->getParam('payload', '');
         $uri = $this->getRequest()->getParam('uri','');
-        $url = $this->serviceClient->getUrl($uri);
+        $baseRoute = $this->config->getValue(self::BASE_ROUTE_CONFIG_PATH);
+        $url = $this->serviceClient->getUrl($baseRoute, $uri);
 
         $result = [
             "result" => $this->serviceClient->request($method, $url, $payload),

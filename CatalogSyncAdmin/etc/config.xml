@@ -8,9 +8,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <catalog_sync_admin>
-            <frontend_url>http://localhost:5000/admin.js</frontend_url>
-            <admin_api_path>default/catalog-sync-status</admin_api_path>
-            <content_security_policy>fonts.googleapis.com fonts.gstatic.com assets.adobedtm.com use.typekit.net p.typekit.net amcglobal.sc.omtrdc.net http://localhost:5000</content_security_policy>
+            <frontend_url>http://catalog-sync-ui-qa.magento-datasolutions.com/loader.js</frontend_url>
+            <admin_api_path></admin_api_path>
+            <content_security_policy>fonts.googleapis.com fonts.gstatic.com assets.adobedtm.com use.typekit.net p.typekit.net amcglobal.sc.omtrdc.net catalog-sync-ui-qa.magento-datasolutions.com</content_security_policy>
         </catalog_sync_admin>
     </default>
 </config>

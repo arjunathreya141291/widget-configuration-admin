@@ -1,6 +1,6 @@
 {
     "name": "magento/module-catalog-sync-admin",
-    "description": "Catalog Sync Status Interface",
+    "description": "Catalog sync status interface",
     "type": "magento2-module",
     "license": [
         "OSL-3.0",

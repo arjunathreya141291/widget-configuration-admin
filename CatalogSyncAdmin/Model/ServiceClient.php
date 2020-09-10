@@ -25,7 +25,6 @@ class ServiceClient implements ServiceClientInterface
     /**
      * Config paths
      */
-    const ROUTE_CONFIG_PATH = 'catalog_sync/admin_api_path';
     const ENVIRONMENT_CONFIG_PATH = 'magento_saas/environment';
 
     /**
@@ -138,11 +137,9 @@ class ServiceClient implements ServiceClientInterface
     /**
      * @inheritDoc
      */
-    public function getUrl(string $uri) : string
+    public function getUrl(string $baseRoute, string $uri) : string
     {
-        $environmentId = $this->servicesConfig->getEnvironmentId();
-        $route = $this->config->getValue(self::ROUTE_CONFIG_PATH);
-        $url = sprintf('/%s/%s', $route, $uri);
+        $url = sprintf('/%s/%s', $baseRoute, $uri);
         return $url;
     }
 
