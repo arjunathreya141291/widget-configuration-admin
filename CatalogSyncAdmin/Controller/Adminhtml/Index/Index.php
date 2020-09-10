@@ -62,7 +62,7 @@ class Index extends Action implements HttpGetActionInterface
     }
 
     /**
-     * Load the page defined in view/adminhtml/layout/catalogsyncadmin_catalogsyncadmin_index.xml
+     * Load the page defined in view/adminhtml/layout/catalogsyncadmin_index_index.xml
      *
      * @return Page
      */

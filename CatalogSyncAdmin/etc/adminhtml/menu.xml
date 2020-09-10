@@ -16,6 +16,7 @@
              parent="Magento_Backend::system_convert"
              action="catalogsyncadmin/"
              resource="Magento_CatalogSyncAdmin::catalogsyncadmin"
+             dependsOnConfig="catalog_sync_admin/show_menu_item"
         />
     </menu>
 </config>
