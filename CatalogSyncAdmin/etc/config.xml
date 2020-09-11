@@ -10,7 +10,7 @@
         <catalog_sync_admin>
             <show_menu_item>0</show_menu_item>
             <frontend_url>https://commerce.adobe.net/catalog/sync/loader.js</frontend_url>
-            <admin_api_path>catalog</admin_api_path>
+            <admin_api_path>catalogfeed</admin_api_path>
             <content_security_policy>fonts.googleapis.com fonts.gstatic.com assets.adobedtm.com use.typekit.net p.typekit.net amcglobal.sc.omtrdc.net commerce.adobe.net</content_security_policy>
         </catalog_sync_admin>
     </default>
