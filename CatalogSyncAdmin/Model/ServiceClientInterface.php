@@ -28,8 +28,9 @@ interface ServiceClientInterface
      * Build URL to SaaS Service
      *
      * @param string $baseRoute
+     * @param string $version
      * @param string $uri
      * @return string
      */
-    public function getUrl(string $baseRoute, string $uri) : string;
+    public function getUrl(string $baseRoute, string $version, string $uri) : string;
 }

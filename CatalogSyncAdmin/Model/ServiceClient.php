@@ -137,10 +137,9 @@ class ServiceClient implements ServiceClientInterface
     /**
      * @inheritDoc
      */
-    public function getUrl(string $baseRoute, string $uri) : string
+    public function getUrl(string $baseRoute, string $version, string $uri) : string
     {
-        $url = sprintf('/%s/%s', $baseRoute, $uri);
-        return $url;
+        return sprintf('/%s/%s/%s', $baseRoute, $version, $uri);
     }
 
     /**
