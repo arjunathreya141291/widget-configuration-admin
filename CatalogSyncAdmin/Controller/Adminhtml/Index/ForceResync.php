@@ -11,6 +11,7 @@ use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\SaaSCatalog\Model\ResyncManager;
+use Magento\SaaSCatalog\Model\ResyncManagerPool;
 
 /**
  * Controller responsible for dealing with data re-sync requests from the react app.
@@ -23,22 +24,27 @@ class ForceResync extends AbstractAction
     private $resultJsonFactory;
 
     /**
+     * @var ResyncManagerPool
+     */
+    private $resyncManagerPool;
+
+    /**
      * @var ResyncManager
      */
     private $productResync;
 
     /**
      * @param Context $context
-     * @param ResyncManager $productResync
+     * @param ResyncManagerPool $resyncManagerPool
      * @param JsonFactory $resultJsonFactory
      */
     public function __construct(
         Context $context,
-        ResyncManager $productResync,
+        ResyncManagerPool $resyncManagerPool,
         JsonFactory $resultJsonFactory
     ) {
-        $this->productResync = $productResync;
         $this->resultJsonFactory = $resultJsonFactory;
+        $this->resyncManagerPool = $resyncManagerPool;
         parent::__construct($context);
     }
 
@@ -50,6 +56,7 @@ class ForceResync extends AbstractAction
         $jsonResult = $this->resultJsonFactory->create();
 
         try {
+            $this->productResync = $this->resyncManagerPool->getResyncManager('products');
             $this->productResync->resetSubmittedData();
             $result = ['result' => 'Success'];
         } catch (\Exception $ex) {
