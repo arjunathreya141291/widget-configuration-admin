@@ -97,7 +97,7 @@ class ServiceClient implements ServiceClientInterface
                 self::EXTENSION_NAME,
                 $this->config->getValue(self::ENVIRONMENT_CONFIG_PATH)
             );
-            $headers[] = ['Content-Type' => 'application/json'];
+            $headers = ['Content-Type' => 'application/json'];
             $options = [
                 'headers' => $headers,
                 'body' => $data
