@@ -10,8 +10,8 @@ namespace Magento\CatalogSyncAdmin\Controller\Adminhtml\Index;
 use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
-use Magento\SaaSCatalog\Model\ResyncManager;
-use Magento\SaaSCatalog\Model\ResyncManagerPool;
+use Magento\SaaSCommon\Model\ResyncManager;
+use Magento\SaaSCommon\Model\ResyncManagerPool;
 
 /**
  * Controller responsible for dealing with data re-sync requests from the react app.
@@ -49,7 +49,7 @@ class ForceResync extends AbstractAction
     }
 
     /**
-     * Execute call to re-sync SaaSCatalog product data
+     * Execute call to re-sync catalog product data
      */
     public function execute()
     {
