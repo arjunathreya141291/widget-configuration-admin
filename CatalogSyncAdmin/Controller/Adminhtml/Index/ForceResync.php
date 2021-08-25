@@ -56,8 +56,8 @@ class ForceResync extends AbstractAction
         $jsonResult = $this->resultJsonFactory->create();
 
         try {
-            $this->productResync = $this->resyncManagerPool->getResyncManager('products');
-            $this->productResync->resetSubmittedData();
+            $this->resyncProducts();
+            $this->resyncProductOverrides();
             $result = ['result' => 'Success'];
         } catch (\Exception $ex) {
             $result = ['result' => 'An error occurred during data re-sync.'];
@@ -74,5 +74,27 @@ class ForceResync extends AbstractAction
     protected function _isAllowed()
     {
         return $this->_authorization->isAllowed('Magento_CatalogSyncAdmin::catalog_sync_admin');
+    }
+
+    /**
+     * Resync products feed
+     *
+     * @throws \Exception
+     */
+    private function resyncProducts(): void
+    {
+        $this->productResync = $this->resyncManagerPool->getResyncManager('products');
+        $this->productResync->resetSubmittedData();
+    }
+
+    /**
+     * Resync product overrides feed
+     *
+     * @throws \Exception
+     */
+    private function resyncProductOverrides(): void
+    {
+        $this->productResync = $this->resyncManagerPool->getResyncManager('productoverrides');
+        $this->productResync->resetSubmittedData();
     }
 }
