@@ -10,7 +10,6 @@ namespace Magento\CatalogSyncAdmin\Controller\Adminhtml\Index;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
@@ -22,21 +21,9 @@ use Magento\Store\Model\StoreManagerInterface;
 class Index extends Action implements HttpGetActionInterface
 {
     /**
-     * Config paths
-     */
-    const CONTENT_SECURITY_POLICY_CONFIG_PATH = 'catalog_sync_admin/content_security_policy';
-
-    const MENU_ID = 'Magento_CatalogSyncAdmin::catalog_sync_admin';
-
-    /**
      * @var PageFactory
      */
     protected $resultPageFactory;
-
-    /**
-     * @var ScopeConfigInterface
-     */
-    private $config;
 
     /**
      * @var StoreManagerInterface
@@ -46,18 +33,15 @@ class Index extends Action implements HttpGetActionInterface
     /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
-     * @param ScopeConfigInterface $config
      * @param StoreManagerInterface $storeManager
      */
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory,
-        ScopeConfigInterface $config,
         StoreManagerInterface  $storeManager
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
-        $this->config = $config;
         $this->storeManager = $storeManager;
     }
 
@@ -65,17 +49,13 @@ class Index extends Action implements HttpGetActionInterface
      * Load the page defined in view/adminhtml/layout/catalog_sync_admin_index_index.xml
      *
      * @return Page
+     * @throws NoSuchEntityException
      */
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu(static::MENU_ID);
+        $resultPage->setActiveMenu('Magento_CatalogSyncAdmin::catalog_sync_admin');
         $resultPage->getConfig()->getTitle()->prepend(__('Catalog Sync'));
-        $resultPage->setHeader(
-            'Content-Security-Policy',
-            "default-src 'self' data: 'unsafe-inline' 'unsafe-eval' "
-            . $this->config->getValue(self::CONTENT_SECURITY_POLICY_CONFIG_PATH)
-        );
         $this->setStoreView();
         return $resultPage;
     }
