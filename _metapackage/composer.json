@@ -1,0 +1,23 @@
+{
+    "name": "magento/catalog-sync-admin",
+    "description": "Catalog Sync Admin metapackage",
+    "type": "metapackage",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0",
+        "magento/module-catalog-sync-admin": "2.0.0",
+        "magento/module-product-recommendations-layout": "^5.0.0",
+        "magento/module-product-recommendations-admin": "^5.0.0",
+        "magento/module-product-recommendations-sync-admin": "^2.0.0",
+        "magento/module-saas-catalog": "^102.0.0",
+        "magento/module-saas-common": "^102.0.0",
+        "magento/module-saas-product-override": "^102.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.5.0"
+    },
+    "version": "2.0.0"
+}
