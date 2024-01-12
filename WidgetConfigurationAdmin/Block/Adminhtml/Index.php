@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Magento\CatalogSyncAdmin\Block\Adminhtml;
+namespace Magento\WidgetConfigurationAdmin\Block\Adminhtml;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template;
@@ -92,18 +92,5 @@ class Index extends Template
     {
         $websiteId = $this->_storeManager->getStore($this->getStoreViewCode())->getWebsiteId();
         return $this->_storeManager->getWebsite($websiteId)->getCode();
-    }
-
-    /**
-     * Get product count for selected store view
-     *
-     * @return int
-     * @throws \Magento\Framework\Exception\LocalizedException
-     */
-    public function getStoreViewProductCount(): int
-    {
-        $productCollection = $this->collectionFactory->create();
-        $productCollection->addStoreFilter($this->getStoreViewCode());
-        return $productCollection->count();
     }
 }

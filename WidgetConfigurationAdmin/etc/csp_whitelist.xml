@@ -29,15 +29,15 @@
                 <value id="adobe_assets" type="host">assets.adobedtm.com</value>
                 <value id="amcglobal" type="host">amcglobal.sc.omtrdc.net</value>
                 <value id="use_typekit" type="host">use.typekit.net</value>
-                <value id="catalog_sync_admin_ui" type="host">commerce.adobe.net</value>
+                <value id="catalog_sync_admin_ui" type="host">catalog-sync-ui-qa.magento-datasolutions.com</value>
             </values>
         </policy>
         <policy id="connect-src">
             <values>
-                <value id="catalog_sync_admin_api_gateway" type="host">api.magento.com</value>
-                <value id="catalog_sync_admin_adobe_io" type="host">commerce.adobe.io</value>
+                <value id="catalog_sync_admin_api_gateway" type="host">qa-api.magedevteam.com</value>
+                <value id="catalog_sync_admin_adobe_io" type="host">commerce-int.adobe.io</value>
                 <value id="use_typekit" type="host">performance.typekit.net</value>
-                <value id="catalog_sync_admin_ui_connect" type="host">commerce.adobe.net</value>
+                <value id="catalog_sync_admin_ui_connect" type="host">catalog-sync-ui-qa.magento-datasolutions.com</value>
             </values>
         </policy>
     </policies>

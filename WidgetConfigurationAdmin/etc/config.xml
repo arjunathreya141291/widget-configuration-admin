@@ -9,7 +9,7 @@
     <default>
         <catalog_sync_admin>
             <show_menu_item>0</show_menu_item>
-            <frontend_url>https://commerce.adobe.net/catalog/sync/v1/loader.js</frontend_url>
+            <frontend_url>https://catalog-sync-ui-qa.magento-datasolutions.com/loader.js</frontend_url>
             <admin_api_path>catalogfeed</admin_api_path>
             <content_security_policy/>
         </catalog_sync_admin>

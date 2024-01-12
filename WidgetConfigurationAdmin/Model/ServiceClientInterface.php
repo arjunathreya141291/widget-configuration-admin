@@ -5,10 +5,10 @@
  */
 declare(strict_types=1);
 
-namespace Magento\CatalogSyncAdmin\Model;
+namespace Magento\WidgetConfigurationAdmin\Model;
 
 /**
- * Interface for SaaS service calls for product recommendations
+ * Interface for SaaS service calls for widget configuration
  *
  * @api
  */

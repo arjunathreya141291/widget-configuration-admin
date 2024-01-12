@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Magento\CatalogSyncAdmin\Controller\Adminhtml\Index;
+namespace Magento\WidgetConfigurationAdmin\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -46,7 +46,7 @@ class Index extends Action implements HttpGetActionInterface
     }
 
     /**
-     * Load the page defined in view/adminhtml/layout/catalog_sync_admin_index_index.xml
+     * Load the page defined in view/adminhtml/layout/widget_configuration_admin_index_index.xml
      *
      * @return Page
      * @throws NoSuchEntityException
@@ -54,8 +54,8 @@ class Index extends Action implements HttpGetActionInterface
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Magento_CatalogSyncAdmin::catalog_sync_admin');
-        $resultPage->getConfig()->getTitle()->prepend(__('Catalog Sync'));
+        $resultPage->setActiveMenu('Magento_WidgetConfigurationAdmin::widget_configuration_admin');
+        $resultPage->getConfig()->getTitle()->prepend(__('Widget Configuration'));
         $this->setStoreView();
         return $resultPage;
     }
