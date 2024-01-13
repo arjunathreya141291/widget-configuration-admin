@@ -20,7 +20,7 @@ class Index extends Template
      * Config Paths
      * @var string
      */
-    private const FRONTEND_URL_PATH = 'catalog_sync_admin/frontend_url';
+    private const FRONTEND_URL_PATH = 'widget_configuration_admin/frontend_url';
 
     /**
      * @var ServicesConfigInterface

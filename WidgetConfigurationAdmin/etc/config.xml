@@ -7,11 +7,11 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <catalog_sync_admin>
+        <widget_configuration_admin>
             <show_menu_item>0</show_menu_item>
             <frontend_url>https://catalog-sync-ui-qa.magento-datasolutions.com/loader.js</frontend_url>
             <admin_api_path>catalogfeed</admin_api_path>
             <content_security_policy/>
-        </catalog_sync_admin>
+        </widget_configuration_admin>
     </default>
 </config>

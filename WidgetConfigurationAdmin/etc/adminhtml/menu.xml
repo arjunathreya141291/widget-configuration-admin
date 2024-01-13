@@ -15,7 +15,7 @@
              sortOrder="50"
              parent="Magento_Backend::system_convert"
              action="widget_configuration_admin/"
-             resource="Magento_WidgetConfigurationAdmin::catalog_sync_admin"
+             resource="Magento_WidgetConfigurationAdmin::widget_configuration_admin"
              dependsOnConfig="widget_configuration_admin/show_menu_item"
         />
     </menu>
