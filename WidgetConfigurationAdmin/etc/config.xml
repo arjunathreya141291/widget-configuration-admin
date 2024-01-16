@@ -9,8 +9,7 @@
     <default>
         <widget_configuration_admin>
             <show_menu_item>0</show_menu_item>
-            <frontend_url>https://catalog-sync-ui-qa.magento-datasolutions.com/loader.js</frontend_url>
-            <admin_api_path>catalogfeed</admin_api_path>
+            <frontend_url>http://localhost:8080/bundle.js</frontend_url>
             <content_security_policy/>
         </widget_configuration_admin>
     </default>
