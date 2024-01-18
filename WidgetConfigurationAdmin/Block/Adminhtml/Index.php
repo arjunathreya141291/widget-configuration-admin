@@ -93,4 +93,18 @@ class Index extends Template
         $websiteId = $this->_storeManager->getStore($this->getStoreViewCode())->getWebsiteId();
         return $this->_storeManager->getWebsite($websiteId)->getCode();
     }
+
+    /**
+     * Get store code from store view code.
+     *
+     * @return string
+     * @throws NoSuchEntityException
+     */
+    public function getStoreCode(): string
+    {
+        $storeId = $this->getRequest()->getParam('store');
+        $storeGroupId = $this->_storeManager->getStore($storeId)->getStoreGroupId();
+        return $this->_storeManager->getGroup($storeGroupId)->getCode();
+    }
+
 }
